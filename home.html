@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegação Fixa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Barra de navegação */
+        .navbar {
+            background-color: #333;
+            position: fixed; /* Fixa a barra no topo */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Garante que a barra esteja sempre no topo */
+        }
+
+        /* Links da barra de navegação */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Cor ao passar o mouse nos links */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Espaço para o conteúdo abaixo da barra de navegação */
+        .content {
+            padding: 12px;
+            margin-top: 50px; /* Espaço para a barra fixa */
+            border-radius: 8px;
+        }
+        .arrow {
+        transition: transform .2s linear;
+        }
+
+        .accordion:has(.active) .arrow {
+            transform: rotate(180deg);
+        }
+
+        .intro{
+          padding-top: 27px;
+          display: flex;
+          padding: 30px;
+          margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="about.html">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#ranking">ranking
+        </a>
+    </div>
+    <div class="intro">
+        <h1>Bem vindo,  </h1>
+        <h1>
+            <div id="userInfo"></div>
+        </h1>
+        <h1>, ao primeira versao de um possivel site.</h1>
+    </div>
+    <!-- Conteúdo da página -->
+    <div class="content">
+        <div class="options-container">
+            <div class="options">
+                <button class="clikbutton" id="addAccordion">
+                    <img src="img/imgAdd.png" alt="add" class="option" style="height: 100px;">
+                    <h3 class="product-title">Adicionar afazeres</h3>
+                </button>
+            </div>
+            <div class="options">
+                <button class="clikbutton" id="completeTask">
+                    <img src="img/checkImg.png" alt="add" class="option" style="height: 100px;">
+                    <h3 class="product-title">Concluir um afazer</h3>
+                </button>
+            </div>
+            <div class="options">
+                <button class="clikbutton" id="removeAccordion">
+                    <img src="img/imgRmv.png" alt="add" class="option" style="height: 100px;">
+                    <h3 class="product-title">Remover um afazer</h3>
+                </button>
+            </div>
+        </div>
+        <div id="accordion-container"></div>
+        <script src="script.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+    
+            .accordion {
+                background-color: #fff;
+                border-radius: 8px;
+                padding: 12px;
+                cursor: pointer;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                max-width: 400px;
+                z-index: 2; 
+            }
+    
+            .accordion-header {
+                width: 100%;
+                border: none;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 16px;
+                cursor: pointer;
+            }
+    
+            .accordion-body {
+                color: #444;
+                font-size: 14px;
+                opacity: 0;
+                height: 0;
+                overflow: hidden;
+                transition: opacity .3s, height .3s;
+            }
+    
+            .accordion-body.open {
+                height: auto;
+                opacity: 1;
+                padding-top: 10px;
+            }
+    
+            .arrow {
+                transition: transform .2s linear;
+            }
+    
+            .accordion-body.open + .arrow {
+                transform: rotate(180deg);
+            }
+    
+            /* Estilo para título concluído */
+            .completed {
+                text-decoration: line-through;
+                color: green;
+            }
+    
+            /* Estilo para accordion aberto com hover */
+            .accordion.open:hover {
+                background-color: #e0f7fa;
+                border: 2px solid #008080;
+            }
+            .accordion.open:hover + .arrow {
+                transform: rotate(180deg);
+            }
+        </style>
+    </div>
+    
+</body>
+</html>

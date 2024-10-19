@@ -1,0 +1,37 @@
+body{
+    background-color: #6366f1;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between; /* Coloca uma div à esquerda e outra à direita */
+    align-items: flex-start; /* Alinha as duas divs pelo topo */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 500px;
+    z-index: 0; 
+}
+
+.options {
+    flex: 1 1 45%;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 80px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.clikbutton {
+    width: 100%;
+    text-align: center;
+    border-radius: 80px;
+}
